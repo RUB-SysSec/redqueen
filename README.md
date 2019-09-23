@@ -46,7 +46,6 @@ python kafl_fuzz.py Kernel \
  <a> <img  src="fuzzer.gif"> </a>
 
 
-
 ### Trophies
 * [CVE-2018-12641](https://bugs.launchpad.net/ubuntu/+source/binutils/+bug/1763099) (binutils nm-new)
 * [CVE-2018-12697](https://bugs.launchpad.net/ubuntu/+source/binutils/+bug/1763102) (binutils libiberty)
