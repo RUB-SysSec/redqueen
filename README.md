@@ -3,7 +3,7 @@
 
 Redqueen is a fast general purpose fuzzer for x86 binary applications. It can automatically overcome checksums and magic bytes without falling back to complex and fragile program analysis techniques, such as symbolic execution. It works by observing the arguments to function calls and compare instructions via virtual machine introspection. Observed values are used to provide inputs specific mutations. More details can be found in the paper. This fuzzer is built upon [kAFL](https://github.com/RUB-SysSec/kAFL) and requires support for Intel VT-x as well as Intel Processor Trace. 
 
-The <a href="(https://www.ndss-symposium.org/ndss-paper/redqueen-fuzzing-with-input-to-state-correspondence/">Paper</a>, <a href="https://www.youtube.com/watch?v=9JpanJ29r_U">Talk</a> and <a href="https://hexgolems.com/talks/redqueen.pdf">Slides</a> describing Redqueen were published at NDSS 2019. 
+The <a href="https://www.ndss-symposium.org/ndss-paper/redqueen-fuzzing-with-input-to-state-correspondence/">Paper</a>, <a href="https://www.youtube.com/watch?v=9JpanJ29r_U">Talk</a> and <a href="https://hexgolems.com/talks/redqueen.pdf">Slides</a> describing Redqueen were published at NDSS 2019. 
 
 ## BibTex:
 ```
@@ -28,7 +28,17 @@ This will setup everything, assuming an Ubuntu 16.04.
 Fuzzing with Redqueen is a two stage process. First, the target application is packed:
 
 ```
-python ~/redqueen/kAFL-Fuzzer/kafl_user_prepare.py --recompile -args=/A -file=/A ~/redqueen/Evaluation/lava/binaries/who ~/redqueen/Evaluation/lava/packed/who m64
+python ~/redqueen/kAFL-Fuzzer/kafl_user_prepare.py --recompile -args=/A -file=/A ~/redqueen/Evaluation/lava/binaries/who ~/redqueen/Evaluation/lava/packed/who/ m64
+```
+
+Use `kafl_info.py` and the generated `info` executable to get the address ranges of your fuzzing target:
+
+```
+python kafl_info.py Kernel  \
+~/redqueen/Target-Components/linux_initramfs/bzImage-linux-4.15-rc7 \
+~/redqueen/Target-Components/linux_initramfs/init.cpio.gz \
+~/redqueen/Evaluation/lava/packed/who/who_info \
+500
 ```
 
 Then the packed binary can be fuzzed.
@@ -72,7 +82,7 @@ python kafl_fuzz.py Kernel \
 * [CVE-2018-20118](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20118) (tcpdump)
 * [CVE-2018-20119](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-20119) (tcpdump)
 
-## Licence
+## License
 
 AGPLv3
 
