@@ -3,7 +3,7 @@
 
 Redqueen is a fast general purpose fuzzer for x86 binary applications. It can automatically overcome checksums and magic bytes without falling back to complex and fragile program analysis techniques, such as symbolic execution. It works by observing the arguments to function calls and compare instructions via virtual machine introspection. Observed values are used to provide inputs specific mutations. More details can be found in the paper. This fuzzer is built upon [kAFL](https://github.com/RUB-SysSec/kAFL) and requires support for Intel VT-x as well as Intel Processor Trace. 
 
-The <a href="(https://www.ndss-symposium.org/ndss-paper/redqueen-fuzzing-with-input-to-state-correspondence/">Paper</a>, <a href="https://www.youtube.com/watch?v=9JpanJ29r_U">Talk</a> and <a href="https://hexgolems.com/talks/redqueen.pdf">Slides</a> describing Redqueen were published at NDSS 2019. 
+The <a href="https://www.ndss-symposium.org/ndss-paper/redqueen-fuzzing-with-input-to-state-correspondence/">Paper</a>, <a href="https://www.youtube.com/watch?v=9JpanJ29r_U">Talk</a> and <a href="https://hexgolems.com/talks/redqueen.pdf">Slides</a> describing Redqueen were published at NDSS 2019. 
 
 ## BibTex:
 ```
