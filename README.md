@@ -34,7 +34,7 @@ python ~/redqueen/kAFL-Fuzzer/kafl_user_prepare.py --recompile -args=/A -file=/A
 Then the packed binary can be fuzzed.
 
 ```
-python ./kafl_fuzz.py Kernel \
+python kafl_fuzz.py Kernel \
 ~/redqueen/Target-Components/linux_initramfs/bzImage-linux-4.15-rc7 \
 ~/redqueen/Target-Components/linux_initramfs/init.cpio.gz \
 ~/redqueen/Evaluation/lava/packed/who/who_fuzz  \
