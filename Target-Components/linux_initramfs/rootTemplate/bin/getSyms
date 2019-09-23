@@ -1,0 +1,5 @@
+#!/bin/sh
+echo START
+cat /proc/kallsyms
+echo END
+/sbin/poweroff -f
