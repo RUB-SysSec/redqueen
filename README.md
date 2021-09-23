@@ -5,6 +5,8 @@ Redqueen is a fast general purpose fuzzer for x86 binary applications. It can au
 
 The <a href="https://www.ndss-symposium.org/ndss-paper/redqueen-fuzzing-with-input-to-state-correspondence/">Paper</a>, <a href="https://www.youtube.com/watch?v=9JpanJ29r_U">Talk</a> and <a href="https://hexgolems.com/talks/redqueen.pdf">Slides</a> describing Redqueen were published at NDSS 2019. 
 
+_Note_: Intel now actively maintains a better version of kAFL/Redqueen/Grimoire here: https://github.com/IntelLabs/kAFL 
+
 ## BibTex:
 ```
 @inproceedings{redqueen,
